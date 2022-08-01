@@ -1,68 +1,71 @@
- body{
-    font-family: sans-serif;
-    background-color: #066acd;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
-.container{
-    background-color: white; 
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 100%;
-    
-} 
-.input{
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
+ body {
+     font-family: sans-serif;
+     background-color: #066acd;
+     height: 90vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
 
-#inputBox{
-    width: 100%;
-    border-radius: 5px;
-    padding: 0.7rem;
-    border:2px solid #d1d3d4;
-    font-size: 1rem;
-    font-weight: 500;
-}  
-#inputBox:focus{
-    outline: none;
-    border-color:#0d75ec
-}
-.addButton
-{
-    background-color: #0d75ec;
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
-    padding: 0.6rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-}
-.lists{
-    background-color:#c5e1e6;
-    font-size: 1rem;
-    font-weight: 500;
-    border:2px solid #d1d3d4;
-    border-radius: 5px;
-    padding: 0.4rem;
-    text-align: center;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-.delete{
-    background-color: #0a2ea4;
-    color: white;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
+ .container {
+     background-color: white;
+     padding: 2rem;
+     border-radius: 10px;
+     max-width: 500px;
+     width: 100%;
+ }
+
+ .input {
+     display: flex;
+     justify-content: space-between;
+     gap: 2rem;
+     margin-bottom: 4rem;
+ }
+
+ #inputBox {
+     width: 100%;
+     border-radius: 5px;
+     padding: 0.7rem;
+     border: 2px solid #d1d3d4;
+     font-size: 1rem;
+     font-weight: 500;
+ }
+
+ #inputBox:focus {
+     outline: none;
+     border-color: #0d75ec
+ }
+
+ .addButton {
+     background-color: #0d75ec;
+     font-size: 1rem;
+     font-weight: 500;
+     color: white;
+     padding: 0.6rem 1.5rem;
+     border: none;
+     border-radius: 5px;
+ }
+
+ .lists {
+     background-color: #c5e1e6;
+     font-size: 1rem;
+     font-weight: 500;
+     border: 2px solid #d1d3d4;
+     border-radius: 5px;
+     padding: 0.4rem;
+     text-align: center;
+     margin-top: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 1rem;
+ }
+
+ .delete {
+     background-color: #0a2ea4;
+     color: white;
+     padding: 0.6rem;
+     border: none;
+     border-radius: 5px;
+     font-size: 1.2rem;
+ }
