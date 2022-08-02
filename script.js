@@ -13,3 +13,7 @@ function display() {
     }
     inputValue.value = ''
 }
+function deletes(x)
+{
+    x.parentNode.remove()
+}
