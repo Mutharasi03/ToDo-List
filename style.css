@@ -53,19 +53,20 @@
      border: 2px solid #d1d3d4;
      border-radius: 5px;
      padding: 0.4rem;
-     text-align: center;
      margin-top: 1rem;
+     text-align: center;
      display: flex;
      align-items: center;
      justify-content: space-between;
-     gap: 1rem;
+     cursor: pointer;
  }
 
- .delete {
+ .icons {
      background-color: #0a2ea4;
      color: white;
      padding: 0.6rem;
      border: none;
      border-radius: 5px;
      font-size: 1.2rem;
+     margin-right: 0;
  }
