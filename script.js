@@ -1,62 +1,67 @@
-const list = document.querySelector('.task')
-const addButton = document.querySelector('.addButton')
-const inputValue = document.querySelector('#inputBox')
-const myform = document.querySelector('.input')
-const taskArray=[];
+const list = document.querySelector(".task");
+const addButton = document.querySelector(".addButton");
+const inputValue = document.querySelector("#inputBox");
+const myform = document.querySelector(".input");
+let taskArray = [];
 
-function addTask(userValue){
-    taskArray.push(userValue)
-    list.innerHTML += `<div class="lists">
+myform.addEventListener("submit", display);
 
-    ${userValue}
+// Validation 
+function display(e) {
+  e.preventDefault();
+  const userValue = inputValue.value;
+  const length = userValue.length;
+  if (length == 0) {
+    alert("enter the task");
+  } else {
+    accpectDate();
+  }
+  inputValue.value = "";
+}
+
+// Setitem in localStorage
+function accpectDate() {
+  taskArray.push({
+    text: inputValue.value,
+  });
+  localStorage.setItem("tasks", JSON.stringify(taskArray));
+  addTask();
+}
+
+// Add task
+function addTask() {
+  list.innerHTML = "";
+  taskArray.map((x, y) => {
+    return (list.innerHTML += `<div class="lists" id=${y}>
+
+    ${x.text}
     <div class="iconBtn">
     <button class="icons" onclick="edit(this)"><i class="fa fa-edit"></i></button>
     
-    <button class="icons" onclick="deletes(this)"><i class="fa fa-trash-o"></i></button>
+    <button class="icons" onclick="deletes(this)" ><i class="fa fa-trash-o"></i></button>
     </div>
-    </div>`
+    </div>`);
+  });
 }
 
-function setItems(){
- localStorage.setItem("tasks",JSON.stringify(taskArray))
-}
+// Getitem in localStorage
+(() => {
+  taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
+  console.log(taskArray);
+  addTask();
+})();
 
-function getItems(){
-    let tasks=localStorage.getItem('tasks')
-    if(!tasks)
-    return
-
-    tasks=JSON.parse(tasks)
-    for(index in tasks)
-    {
-        addTask(tasks[index])
-    }
-}
-getItems()
-function display(e) {
-    e.preventDefault()
-    const userValue=inputValue.value
-    const length=userValue.length
-    if (length == 0) {
-        alert('enter the task')
-    }
-    else {
-        addTask(userValue);
-        setItems()
-    }
-    inputValue.value = ''
-}
-// ------------------------------------------------------
+// Delete task
 function deletes(x) {
- x.parentElement.parentElement.remove()
+  x.parentElement.parentElement.remove();
+  taskArray.splice(x.parentElement.parentElement.id, 1);
+  localStorage.setItem("tasks", JSON.stringify(taskArray));
+  console.log(taskArray);
 }
 
+// Edit task
 function edit(x) {
-    let edited = x.parentElement.parentElement.innerText;
-    inputValue.value = edited;
-    x.parentElement.parentElement.remove();
-    setItems()
+  let edited = x.parentElement.parentElement.innerText;
+  inputValue.value = edited;
+  deletes(x);
 }
-
-myform.addEventListener('submit', display)
-
