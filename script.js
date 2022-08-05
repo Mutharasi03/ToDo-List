@@ -44,19 +44,13 @@ function addTask() {
   });
 }
 
-// Getitem in localStorage
-(() => {
-  taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
-  console.log(taskArray);
-  addTask();
-})();
-
 // Delete task
 function deletes(x) {
   x.parentElement.parentElement.remove();
   taskArray.splice(x.parentElement.parentElement.id, 1);
   localStorage.setItem("tasks", JSON.stringify(taskArray));
   console.log(taskArray);
+  get()
 }
 
 // Edit task
@@ -65,3 +59,10 @@ function edit(x) {
   inputValue.value = edited;
   deletes(x);
 }
+
+// Getitem in localStorage
+(get=() => {
+  taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
+  addTask();
+})
+get()
