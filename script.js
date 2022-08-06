@@ -50,7 +50,7 @@ function deletes(x) {
   taskArray.splice(x.parentElement.parentElement.id, 1);
   localStorage.setItem("tasks", JSON.stringify(taskArray));
   console.log(taskArray);
-  get()
+  getItem()
 }
 
 // Edit task
@@ -61,8 +61,8 @@ function edit(x) {
 }
 
 // Getitem in localStorage
-(get=() => {
+(getItem=() => {
   taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
   addTask();
 })
-get()
+getItem()
