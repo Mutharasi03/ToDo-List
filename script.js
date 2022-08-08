@@ -4,10 +4,10 @@ const inputValue = document.querySelector("#inputBox");
 const myform = document.querySelector(".input");
 let taskArray = [];
 
-myform.addEventListener("submit", display);
+myform.addEventListener("submit", validation);
 
 // Validation 
-function display(e) {
+function validation(e) {
   e.preventDefault();
   const userValue = inputValue.value;
   const length = userValue.length;
