@@ -61,8 +61,8 @@ function edit(x) {
 }
 
 // Getitem in localStorage
-(getItem=() => {
+function getItem(){
   taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
   addTask();
-})
+}
 getItem()
