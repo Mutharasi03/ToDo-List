@@ -38,14 +38,14 @@ function addTask() {
     <div class="iconBtn">
     <button class="icons" onclick="edit(this)"><i class="fa fa-edit"></i></button>
     
-    <button class="icons" onclick="deletes(this)" ><i class="fa fa-trash-o"></i></button>
+    <button class="icons" onclick="deleteTask(this)" ><i class="fa fa-trash-o"></i></button>
     </div>
     </div>`);
   });
 }
 
 // Delete task
-function deletes(x) {
+function deleteTask(x) {
   x.parentElement.parentElement.remove();
   taskArray.splice(x.parentElement.parentElement.id, 1);
   localStorage.setItem("tasks", JSON.stringify(taskArray));
